@@ -5,7 +5,7 @@
 ## Features
 - Save To Favorite
 
-<img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/1.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/2.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/3.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/4.png?raw=true" width=200px height=400px><img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/5.png?raw=true" width=200px height=400px>
+<img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/2.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/3.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/4.png?raw=true" width=200px height=400px><img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/5.png?raw=true" width=200px height=400px>
 
 ## Tech
 

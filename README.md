@@ -1,16 +1,29 @@
-# untitled
+# ChuckChuck
 
-A new Flutter project.
+> ChuckChuck is flutter mobile app for Chuck Norris jokes
 
-## Getting Started
+## Features
+- Save To Favorite
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/1.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/2.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/main/screenshots/3.png?raw=true" width=200px height=400px> <img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/4.png?raw=true" width=200px height=400px><img src="https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/screenshots/5.png?raw=true" width=200px height=400px>
 
-A few resources to get you started if this is your first Flutter project:
+## Tech
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- UI file separated
+- Riverpod used
+- flutter_lints rules
+- Code formatted
+- Missing network handler
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+Just download and install [this apk](https://github.com/ease-ln/IU_flutter-assignment-1/blob/a2/ChuckChuck.apk) and be happy
+
+
+
+## Development
+
+Want to contribute? Great! My email is a.drenyasova@innopolis.university
+My deep gratitude to tutorial that are in code as comments
+
+### Have a nice day!!!

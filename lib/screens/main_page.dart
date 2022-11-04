@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:untitled/applicaton/joke_service.dart';
+import 'package:untitled/joke_providers/joke_service.dart';
 import 'package:untitled/joke.dart';
-import 'package:untitled/screens/favoritePage.dart';
+import 'package:untitled/screens/favorite_page.dart';
 import 'package:swiping_card_deck/swiping_card_deck.dart';
 
 class MyHomePage extends ConsumerWidget {
@@ -13,34 +13,31 @@ class MyHomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<Joke> joke = ref.watch(jokeProvider);
-    final List<Joke> jokes = ref.watch(jokesProvider);
     List<Card> cardDeck = [];
+    ref.watch(jokesProvider);
 
     Card createCard(text) {
       return Card(
-          child: Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Text(text)
-            ),
+        child: Padding(padding: const EdgeInsets.all(32.0), child: Text(text)),
       );
     }
 
     List<Card> getCardDeck() {
-      cardDeck.add(
-          joke.when(
-              data: (joke) => createCard(joke.value),
-              error: (e, s) => createCard('404'),
-              loading: () =>  createCard('loading in progress'),
-          )
-      );
+      cardDeck.add(joke.when(
+        data: (joke) => createCard(joke.value),
+        error: (e, s) => createCard('404'),
+        loading: () => createCard('loading in progress'),
+      ));
       return cardDeck;
     }
 
     final SwipingCardDeck deck = SwipingCardDeck(
       cardDeck: getCardDeck(),
       onDeckEmpty: () => null,
-      onLeftSwipe: (Card card) => { ref.refresh(jokeProvider), debugPrint("Swiped left!")},
-      onRightSwipe: (Card card) => { ref.refresh(jokeProvider), debugPrint("Swiped right!")},
+      onLeftSwipe: (Card card) =>
+          {ref.refresh(jokeProvider), debugPrint("Swiped left!")},
+      onRightSwipe: (Card card) =>
+          {ref.refresh(jokeProvider), debugPrint("Swiped right!")},
       cardWidth: 350,
       swipeThreshold: MediaQuery.of(context).size.width / 3,
       minimumVelocity: 1000,
@@ -61,7 +58,7 @@ class MyHomePage extends ConsumerWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FavoritePage(title: 'Favorite'),
+                    builder: (context) => const FavoritePage(title: 'Favorite'),
                   ),
                 );
               },
@@ -81,10 +78,7 @@ class MyHomePage extends ConsumerWidget {
                 ),
                 SizedBox(
                   height: 250,
-                  child: FractionallySizedBox(
-                    widthFactor: 1,
-                    child: deck
-                  ),
+                  child: FractionallySizedBox(widthFactor: 1, child: deck),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,17 +92,17 @@ class MyHomePage extends ConsumerWidget {
                     ),
                     const SizedBox(width: 20),
                     IconButton(
-                        icon: Icon(
-                            (joke.value?.completed ?? false) ? Icons.star : Icons.star_border
-                        ),
+                        icon: Icon((joke.value?.completed ?? false)
+                            ? Icons.star
+                            : Icons.star_border),
                         iconSize: 30,
                         color: Colors.yellow,
                         onPressed: () => {
-                          ref.watch(jokesProvider.notifier).toggle(
-                              joke.when(
-                                data: (joke) => joke,
-                                error: (e, s) =>
-                                    Joke(
+                              ref
+                                  .watch(jokesProvider.notifier)
+                                  .toggle(joke.when(
+                                    data: (joke) => joke,
+                                    error: (e, s) => Joke(
                                         [''],
                                         'Oh... no error with joke loading',
                                         '',
@@ -116,18 +110,10 @@ class MyHomePage extends ConsumerWidget {
                                         '',
                                         '',
                                         ''),
-                                loading: () =>
-                                    Joke(
-                                        [''],
-                                        'Loading',
-                                        '',
-                                        '',
-                                        '',
-                                        '',
-                                        ''),
-                              )
-                          ),
-                    }),
+                                    loading: () => Joke(
+                                        [''], 'Loading', '', '', '', '', ''),
+                                  )),
+                            }),
                     const SizedBox(width: 20),
                     IconButton(
                       icon: const Icon(Icons.check),

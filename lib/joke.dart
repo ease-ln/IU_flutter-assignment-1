@@ -13,7 +13,8 @@ class Joke {
   final String value;
   bool completed = false;
 
-  Joke(this.categories, this.createdAt, this.iconUrl, this.id, this.updatedAt, this.url, this.value);
+  Joke(this.categories, this.createdAt, this.iconUrl, this.id, this.updatedAt,
+      this.url, this.value);
 
   Joke copyWith(joke) {
     joke.completed = !joke.completed;
@@ -23,13 +24,13 @@ class Joke {
   factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
 
   Map<String, dynamic> toJson() => {
-    'categories': categories.toString(),
-    'createdAt': createdAt,
-    'iconUrl': iconUrl.toString(),
-    'id': id,
-    'url': url,
-    'updatedAt': updatedAt,
-    'value': value,
-    'completed': completed,
-  };
+        'categories': categories.toString(),
+        'createdAt': createdAt,
+        'iconUrl': iconUrl.toString(),
+        'id': id,
+        'url': url,
+        'updatedAt': updatedAt,
+        'value': value,
+        'completed': completed,
+      };
 }

@@ -16,12 +16,3 @@ Joke _$JokeFromJson(Map<String, dynamic> json) => Joke(
       json['value'] as String,
     );
 
-Map<String, dynamic> _$JokeToJson(Joke instance) => <String, dynamic>{
-      'categories': instance.categories,
-      'created_at': instance.createdAt,
-      'icon_url': instance.iconUrl,
-      'id': instance.id,
-      'updated_at': instance.updatedAt,
-      'url': instance.url,
-      'value': instance.value,
-    };

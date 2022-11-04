@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:untitled/screens/mainPage.dart';
-import 'package:untitled/applicaton/joke_service.dart';
+import 'package:untitled/screens/main_page.dart';
 
 void main() async {
   runApp(

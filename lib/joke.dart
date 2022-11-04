@@ -4,29 +4,32 @@ part 'joke.g.dart';
 
 @JsonSerializable()
 class Joke {
-  Joke(this.categories, this.createdAt, this.iconUrl, this.id, this.updatedAt,
-      this.url, this.value);
+  final List categories;
+  final String createdAt;
+  final String iconUrl;
+  final String id;
+  final String url;
+  final String updatedAt;
+  final String value;
+  bool completed = false;
 
-  @JsonKey(name: 'categories')
-  List categories;
+  Joke(this.categories, this.createdAt, this.iconUrl, this.id, this.updatedAt, this.url, this.value);
 
-  @JsonKey(name: 'created_at')
-  String createdAt;
-
-  @JsonKey(name: 'icon_url')
-  String iconUrl;
-
-  @JsonKey(name: 'id')
-  String id;
-
-  @JsonKey(name: 'updated_at')
-  String updatedAt;
-
-  @JsonKey(name: 'url')
-  String url;
-
-  @JsonKey(name: 'value')
-  String value;
+  Joke copyWith(joke) {
+    joke.completed = !joke.completed;
+    return joke;
+  }
 
   factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
+
+  Map<String, dynamic> toJson() => {
+    'categories': categories.toString(),
+    'createdAt': createdAt,
+    'iconUrl': iconUrl.toString(),
+    'id': id,
+    'url': url,
+    'updatedAt': updatedAt,
+    'value': value,
+    'completed': completed,
+  };
 }
